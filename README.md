@@ -77,3 +77,90 @@ Implementation Highlights
 - BFS uses a queue; DFS a stack; A* a min‑heap prioritized by `f`.
 - Visualization colors: open (blue), closed (gray), current (orange), branch (purple), final path (red).
 
+===
+# Maze Solver Visualizer — A*, BFS, DFS (Tkinter)
+
+
+------------------------------------------------------------
+
+## Bahasa Indonesia
+
+### Apa ini?
+Proyek kecil ini adalah visualizer algoritma pencarian jalur di labirin (maze) menggunakan Python + Tkinter. Anda dapat melihat bagaimana A*, BFS, dan DFS menjelajah sel dari waktu ke waktu, dan membandingkan jalur yang ditemukan serta performanya.
+
+Fokusnya untuk pembelajaran: tampilannya sederhana, kontrolnya minim, dan cocok untuk pemula yang ingin “melihat” cara kerja algoritma graf.
+
+### Tujuan
+- Memperkenalkan A*, BFS, dan DFS dengan visual yang jelas.
+- Menyediakan alat latihan interaktif bagi siswa/guru/siapa saja yang penasaran dengan algoritma pencarian.
+- Memberi gambaran dampak pilihan algoritma terhadap kecepatan dan kualitas jalur.
+
+### Fitur Utama
+- Pembuatan labirin acak (maksimal 200×200) dengan algoritma recursive-backtracker.
+- Visualisasi eksplorasi langkah‑demi‑langkah:
+  - Open/frontier (biru muda), Closed/visited (abu‑abu agak gelap), Current (oranye), Intersection/branch (ungu), Final path (merah).
+- Kontrol animasi: Solve, Pause/Resume, Stop/Reset.
+- Pengaturan ukuran labirin dan kecepatan animasi.
+- Metrik: Steps (panjang jalur) dan Time (ms), plus banyaknya expansions (simpul diekspansi).
+
+### Berkas dalam repo
+- `astar.py` — Visualizer A*.
+- `BFS.py` — Visualizer BFS (First-In-First-Out queue).
+- `DFS_.py` — Visualizer DFS (stack). Nama filenya memang memakai underscore.
+
+> Catatan: File `maze_solver.py` tidak digunakan di README ini sesuai permintaan Anda.
+
+### Cara Menjalankan
+Persyaratan:
+- Python 3.8+ (Windows/macOS/Linux).
+- Tkinter tersedia (di Windows/macOS biasanya sudah termasuk; di Linux: `sudo apt install python3-tk`).
+- (Opsional) Font “EB Garamond” agar tampilan sesuai; jika tidak ada, sistem akan memakai font bawaan.
+
+Langkah cepat:
+1. Buka terminal di folder proyek.
+2. Jalankan salah satu visualizer di bawah:
+   - A*: `python astar.py`
+   - BFS: `python BFS.py`
+   - DFS: `python DFS_.py`
+
+Jika perintah `python` tidak ditemukan, coba `python3`.
+
+### Kontrol di Aplikasi
+- `Maze Size (N × N)`: ukuran labirin. Hanya nilai genap, 2 sampai 200.
+- `Animation Speed`: kecepatan langkah. Bagian kiri bergerak lambat dan halus; bagian kanan meningkat secara eksponensial hingga sangat cepat.
+- `Solve (…​)`: mulai animasi sesuai algoritma.
+- `Pause` / `Resume`: jeda dan lanjutkan animasi.
+- `Stop/Reset`: hentikan animasi dan bersihkan overlay.
+
+### Tips
+- Ukuran 40–80 nyaman untuk melihat pola dan masih cepat di mesin biasa.
+- Kecepatan >50 akan naik eksponensial; naikkan sedikit‑sedikit bila ingin tetap melihat prosesnya.
+- Warna “branch” (ungu) menandai simpul dengan ≥3 keluaran; berguna untuk memahami titik persimpangan.
+
+### Ringkasan Algoritma (Mendalam)
+Labirin direpresentasikan sebagai graf kisi (grid) tak berbobot. Tiap sel terhubung ke tetangga jika tidak ada dinding di antaranya. Titik awal di kiri‑atas, titik akhir di kanan‑bawah.
+
+1) BFS (Breadth‑First Search)
+- Strategi: jelajah berlapis (level by level) menggunakan antrian FIFO.
+- Properti: selalu menemukan jalur terpendek pada graf tak berbobot (optimal), lengkap (complete).
+- Kompleksitas: waktu O(V+E), ruang O(V). Pada grid padat, keduanya bisa besar.
+- Ciri visual: gelombang ekspansi yang “membulat”, jalur yang dihasilkan memang terpendek.
+
+2) DFS (Depth‑First Search)
+- Strategi: menyelam sedalam mungkin menggunakan tumpukan (LIFO).
+- Properti: tidak menjamin jalur terpendek, tetapi sering cepat menemukan “sebuah” jalur.
+- Kompleksitas: waktu O(V+E), ruang bisa sedalam panjang jalur (O(V) terburuk) namun sering lebih hemat dibanding BFS pada graf lebar.
+- Ciri visual: satu cabang panjang, sering mundur (backtrack) ketika buntu.
+
+3) A* (A‑Star)
+- Strategi: perluasan simpul berdasar biaya `f(n) = g(n) + h(n)`.
+  - `g(n)`: biaya dari start ke n (jumlah langkah).
+  - `h(n)`: heuristik ke goal. Di sini digunakan Manhattan distance (|dx| + |dy|) yang admissible pada grid 4‑arah.
+- Properti: dengan heuristik admissible & konsisten, A* optimal dan biasanya jauh lebih sedikit ekspansi dibanding BFS.
+- Kompleksitas: bergantung pada kualitas heuristik; bisa mendekati BFS bila `h` lemah, atau sangat efisien bila `h` informatif.
+- Ciri visual: frontier “mengarah” ke goal, ekspansi cenderung selektif.
+
+Tentang Implementasi
+- Struktur data: `prev` (parent) untuk rekonstruksi jalur, serta penanda `open/closed` sesuai algoritma.
+- BFS memakai queue; DFS memakai stack; A* memakai priority queue (min‑heap) dengan prioritas f.
+- Visualisasi menyorot: open (biru), closed (abu‑abu), current (oranye), persimpangan (ungu), dan final path (merah).
