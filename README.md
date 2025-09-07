@@ -32,7 +32,7 @@ Requirements:
 Quick start:
 1. Open a terminal in the project folder.
 2. Run any visualizer:
-   - A*: `python astar.py`
+   - A*: `python A_star.py`
    - BFS: `python BFS.py`
    - DFS: `python DFS.py`
 
@@ -101,7 +101,7 @@ Fokusnya untuk pembelajaran: tampilannya sederhana, kontrolnya minim, dan cocok 
 - Metrik: Steps (panjang jalur) dan Time (ms), plus banyaknya expansions (simpul diekspansi).
 
 ### Berkas dalam repo
-- `astar.py` — Visualizer A*.
+- `A_star.py` — Visualizer A*.
 - `BFS.py` — Visualizer BFS (First-In-First-Out queue).
 - `DFS.py` — Visualizer DFS (stack).
 
@@ -116,7 +116,7 @@ Persyaratan:
 Langkah cepat:
 1. Buka terminal di folder proyek.
 2. Jalankan salah satu visualizer di bawah:
-   - A*: `python astar.py`
+   - A*: `python A_star.py`
    - BFS: `python BFS.py`
    - DFS: `python DFS_.py`
 
