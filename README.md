@@ -105,8 +105,6 @@ Fokusnya untuk pembelajaran: tampilannya sederhana, kontrolnya minim, dan cocok 
 - `BFS.py` — Visualizer BFS (First-In-First-Out queue).
 - `DFS.py` — Visualizer DFS (stack).
 
-> Catatan: File `maze_solver.py` tidak digunakan di README ini sesuai permintaan Anda.
-
 ### Cara Menjalankan
 Persyaratan:
 - Python 3.8+ (Windows/macOS/Linux).
