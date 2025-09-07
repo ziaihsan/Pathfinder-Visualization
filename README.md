@@ -21,7 +21,7 @@ A small learning‑oriented maze pathfinding visualizer written in Python + Tkin
 ### Files in the repo
 - `A_star.py` — A* visualizer.
 - `BFS.py` — BFS visualizer (FIFO queue).
-- `DFS_.py` — DFS visualizer (stack). The file name intentionally has an underscore.
+- `DFS.py` — DFS visualizer (stack). The file name intentionally has an underscore.
 
 ### How to Run
 Requirements:
