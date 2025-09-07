@@ -1,4 +1,5 @@
 # Pathfinder-Visualization
+# Maze Solver Visualizer — A*, BFS, DFS (Tkinter)
 A small learning‑oriented maze pathfinding visualizer written in Python + Tkinter. It shows how A*, BFS, and DFS explore the maze over time so you can compare their routes and performance.
 
 <img width="912" height="940" alt="Screenshot 2025-09-07 at 21 43 13" src="https://github.com/user-attachments/assets/3fdc6352-4e60-4142-a760-752c9d122ca7" />
@@ -33,7 +34,7 @@ Quick start:
 2. Run any visualizer:
    - A*: `python astar.py`
    - BFS: `python BFS.py`
-   - DFS: `python DFS_.py`
+   - DFS: `python DFS.py`
 
 If `python` isn’t found, try `python3`.
 
@@ -77,10 +78,6 @@ Implementation Highlights
 - BFS uses a queue; DFS a stack; A* a min‑heap prioritized by `f`.
 - Visualization colors: open (blue), closed (gray), current (orange), branch (purple), final path (red).
 
-===
-# Maze Solver Visualizer — A*, BFS, DFS (Tkinter)
-
-
 ------------------------------------------------------------
 
 ## Bahasa Indonesia
@@ -106,7 +103,7 @@ Fokusnya untuk pembelajaran: tampilannya sederhana, kontrolnya minim, dan cocok 
 ### Berkas dalam repo
 - `astar.py` — Visualizer A*.
 - `BFS.py` — Visualizer BFS (First-In-First-Out queue).
-- `DFS_.py` — Visualizer DFS (stack). Nama filenya memang memakai underscore.
+- `DFS.py` — Visualizer DFS (stack).
 
 > Catatan: File `maze_solver.py` tidak digunakan di README ini sesuai permintaan Anda.
 
@@ -124,18 +121,6 @@ Langkah cepat:
    - DFS: `python DFS_.py`
 
 Jika perintah `python` tidak ditemukan, coba `python3`.
-
-### Kontrol di Aplikasi
-- `Maze Size (N × N)`: ukuran labirin. Hanya nilai genap, 2 sampai 200.
-- `Animation Speed`: kecepatan langkah. Bagian kiri bergerak lambat dan halus; bagian kanan meningkat secara eksponensial hingga sangat cepat.
-- `Solve (…​)`: mulai animasi sesuai algoritma.
-- `Pause` / `Resume`: jeda dan lanjutkan animasi.
-- `Stop/Reset`: hentikan animasi dan bersihkan overlay.
-
-### Tips
-- Ukuran 40–80 nyaman untuk melihat pola dan masih cepat di mesin biasa.
-- Kecepatan >50 akan naik eksponensial; naikkan sedikit‑sedikit bila ingin tetap melihat prosesnya.
-- Warna “branch” (ungu) menandai simpul dengan ≥3 keluaran; berguna untuk memahami titik persimpangan.
 
 ### Ringkasan Algoritma (Mendalam)
 Labirin direpresentasikan sebagai graf kisi (grid) tak berbobot. Tiap sel terhubung ke tetangga jika tidak ada dinding di antaranya. Titik awal di kiri‑atas, titik akhir di kanan‑bawah.
