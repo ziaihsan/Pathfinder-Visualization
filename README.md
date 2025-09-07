@@ -116,7 +116,7 @@ Langkah cepat:
 2. Jalankan salah satu visualizer di bawah:
    - A*: `python A_star.py`
    - BFS: `python BFS.py`
-   - DFS: `python DFS_.py`
+   - DFS: `python DFS.py`
 
 Jika perintah `python` tidak ditemukan, coba `python3`.
 
