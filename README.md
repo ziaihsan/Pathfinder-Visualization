@@ -1,5 +1,5 @@
 # Pathfinder-Visualization
-# Maze Solver Visualizer — A*, BFS, DFS (Tkinter)
+## Maze Solver Visualizer — A*, BFS, DFS (Tkinter)
 A small learning‑oriented maze pathfinding visualizer written in Python + Tkinter. It shows how A*, BFS, and DFS explore the maze over time so you can compare their routes and performance.
 
 <img width="912" height="940" alt="Screenshot 2025-09-07 at 21 43 13" src="https://github.com/user-attachments/assets/3fdc6352-4e60-4142-a760-752c9d122ca7" />
